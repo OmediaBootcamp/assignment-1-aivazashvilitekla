@@ -1,0 +1,21 @@
+package dev.omedia;
+
+public class EvenDigitSum {
+    public static int getEvenDigitSum(int number) {
+        if (number < 0) {
+            return -1;
+        }
+        int sum = 0;
+        while (number > 9) {
+            if ((number % 10) % 2 == 0)
+                sum += number % 10;
+            number /= 10;
+            if (number < 9 && (number % 10) % 2 == 0) {
+                sum += number;
+                break;
+            }
+        }
+
+        return sum;
+    }
+}
